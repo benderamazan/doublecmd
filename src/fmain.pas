@@ -8025,6 +8025,10 @@ begin
       else begin
         lblDriveInfo.Caption := lblDriveInfo.Hint;
       end;
+            if (AData.Panel = fpLeft) and (btnLeftDrive.Hint <> '') then
+        lblDriveInfo.Caption := '[' + btnLeftDrive.Hint + ']  ' + lblDriveInfo.Caption
+      else if (AData.Panel = fpRight) and (btnRightDrive.Hint <> '') then
+        lblDriveInfo.Caption := '[' + btnRightDrive.Hint + ']  ' + lblDriveInfo.Caption;
       sboxDrive.Hint := lblDriveInfo.Hint;
 
       if Assigned(Button) then
