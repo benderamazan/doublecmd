@@ -6661,7 +6661,10 @@ begin
     (*/ Disk Panels *)
 
     FDrivesListPopup.UpdateView;
-
+procedure TfrmMain.UpdateWindowView;
+var
+  I: Integer;
+begin
     (*Main menu*)
     Commands.DoShowMainMenu(gMainMenu);
 
@@ -6680,6 +6683,14 @@ begin
   pnlRightTools.Color := clBlack;
   MainToolBar.Transparent := True;
   MainToolBar.Flat := True;
+  for I := 0 to MainToolBar.ButtonCount - 1 do
+    MainToolBar.Buttons[I].Color := clBlack;
+  btnLeftDrive.Color := clBlack;
+  btnLeftRoot.Color := clBlack;
+  btnLeftUp.Color := clBlack;
+  btnRightDrive.Color := clBlack;
+  btnRightRoot.Color := clBlack;
+  btnRightUp.Color := clBlack;
     btnLeftDrive.Visible := gDrivesListButton;
     btnLeftDrive.Flat := gInterfaceFlat;
     btnLeftRoot.Visible := gDrivesListButton;
