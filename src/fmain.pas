@@ -1160,7 +1160,8 @@ begin
   Application.OnShowHint := @AppShowHint;
   Application.OnEndSession := @AppEndSession;
   Application.OnQueryEndSession := @AppQueryEndSession;
-
+  Application.HintColor := clBlack;
+  Screen.HintFont.Color := $00DCDCDC;
   initStash;
 
   // Use LCL's method of dropping files from external
@@ -6671,7 +6672,10 @@ begin
     MainToolBar.ShowCaptions:= gToolBarShowCaptions;
     MainToolBar.SetButtonSize(gToolBarButtonSize, gToolBarButtonSize);
     LoadToolbar(MainToolBar);
-
+  MainToolBar.Color := clBlack;
+  pnlDisk.Color := clBlack;
+  pnlDskLeft.Color := clBlack;
+  pnlDskRight.Color := clBlack;
     btnLeftDrive.Visible := gDrivesListButton;
     btnLeftDrive.Flat := gInterfaceFlat;
     btnLeftRoot.Visible := gDrivesListButton;
