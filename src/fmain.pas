@@ -6700,6 +6700,7 @@ begin
     btnRightDirectoryHotlist.Visible := False;
     btnRightDirectoryHotlist.Flat := gInterfaceFlat;
     btnRightEqualLeft.Visible := False;
+    btnF9.Visible := False;
     btnRightEqualLeft.Flat:= gInterfaceFlat;
     lblRightDriveInfo.Visible:= (gDriveFreeSpace and not (gDriveBarFreeSpace and not gDrivesListButton));
     pbxRightDrive.Visible := gDriveInd;
