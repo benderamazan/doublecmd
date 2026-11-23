@@ -6661,8 +6661,6 @@ begin
     (*/ Disk Panels *)
 
     FDrivesListPopup.UpdateView;
-procedure TfrmMain.UpdateWindowView;
-begin
     (*Main menu*)
     Commands.DoShowMainMenu(gMainMenu);
 
@@ -6673,7 +6671,6 @@ begin
     MainToolBar.ShowCaptions:= gToolBarShowCaptions;
     MainToolBar.SetButtonSize(gToolBarButtonSize, gToolBarButtonSize);
     LoadToolbar(MainToolBar);
-  MainToolBar.Color := clBlack;
   pnlDisk.Color := clBlack;
   pnlDskLeft.Color := clBlack;
   pnlDskRight.Color := clBlack;
