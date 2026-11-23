@@ -7968,6 +7968,7 @@ var
   lblDriveInfo: TLabel;
   Button: TKASToolButton = nil;
   AData: TFreeSpaceData absolute Data;
+  I: Integer;
 begin
   case AData.Panel of
     fpLeft :
@@ -8025,8 +8026,12 @@ begin
       else begin
         lblDriveInfo.Caption := lblDriveInfo.Hint;
       end;
-         if mbGetVolumeLabel(AData.Path, True) <> '' then
-        lblDriveInfo.Caption := '[' + mbGetVolumeLabel(AData.Path, True) + ']  ' + lblDriveInfo.Caption;
+         for I := 0 to DrivesList.Count - 1 do
+        if IsInPath(DrivesList.Items[I]^.Path, AData.Path, True, True) and (DrivesList.Items[I]^.DriveLabel <> '') then
+        begin
+          lblDriveInfo.Caption := '[' + DrivesList.Items[I]^.DriveLabel + ']  ' + lblDriveInfo.Caption;
+          Break;
+        end;
       sboxDrive.Hint := lblDriveInfo.Hint;
 
       if Assigned(Button) then
