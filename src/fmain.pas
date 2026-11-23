@@ -7658,7 +7658,7 @@ begin
     else
       BitmapTmp := PixMapManager.GetDefaultDriveIcon(gDiskIconsSize, DriveButton.Color);
   end;
-  DriveButton.Caption := DriveButton.Caption + ' ▾';
+  DriveButton.Caption := DriveButton.Caption + ' ' + #$E2#$96#$BE;
   AssignRetinaBitmapForControl(DriveButton, gDiskIconsSize, BitmapTmp);
 
   DriveButton.Width := gDiskIconsSize
