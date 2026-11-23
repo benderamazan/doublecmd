@@ -6676,6 +6676,10 @@ begin
   pnlDisk.Color := clBlack;
   pnlDskLeft.Color := clBlack;
   pnlDskRight.Color := clBlack;
+  pnlLeftTools.Color := clBlack;
+  pnlRightTools.Color := clBlack;
+  MainToolBar.Transparent := True;
+  MainToolBar.Flat := True;
     btnLeftDrive.Visible := gDrivesListButton;
     btnLeftDrive.Flat := gInterfaceFlat;
     btnLeftRoot.Visible := gDrivesListButton;
