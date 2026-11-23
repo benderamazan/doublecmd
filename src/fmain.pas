@@ -8026,12 +8026,9 @@ begin
       else begin
         lblDriveInfo.Caption := lblDriveInfo.Hint;
       end;
-         for I := 0 to DrivesList.Count - 1 do
-        if IsInPath(DrivesList.Items[I]^.Path, AData.Path, True, True) and (DrivesList.Items[I]^.DriveLabel <> '') then
-        begin
-          lblDriveInfo.Caption := '[' + DrivesList.Items[I]^.DriveLabel + ']  ' + lblDriveInfo.Caption;
-          Break;
-        end;
+              I := FindMatchingDrive(aFileView.CurrentAddress, AData.Path);
+      if (I >= 0) and (DrivesList.Items[I]^.DriveLabel <> '') then
+        lblDriveInfo.Caption := '[' + DrivesList.Items[I]^.DriveLabel + ']  ' + lblDriveInfo.Caption;
       sboxDrive.Hint := lblDriveInfo.Hint;
 
       if Assigned(Button) then
